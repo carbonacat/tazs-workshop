@@ -1,0 +1,27 @@
+{ "frames": {
+   "DefeatSprite.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 46, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 46, "h": 14 },
+    "sourceSize": { "w": 46, "h": 14 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.15-x64",
+  "image": "DefeatSprite.png",
+  "format": "I8",
+  "size": { "w": 46, "h": 14 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Shadow", "opacity": 255, "blendMode": "normal" },
+   { "name": "Main Writing", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
