@@ -99,7 +99,7 @@
  "meta": {
   "app": "http://www.aseprite.org/",
   "version": "1.2.15-x64",
-  "image": "SlapperBodyASprite.png",
+  "image": "SlapperBodyARawSprite.png",
   "format": "I8",
   "size": { "w": 108, "h": 13 },
   "scale": "1",
