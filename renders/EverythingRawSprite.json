@@ -544,14 +544,78 @@
     "duration": 100
    },
    "EverythingSprite 68.aseprite": {
-    "frame": { "x": 523, "y": 0, "w": 13, "h": 3 },
+    "frame": { "x": 523, "y": 0, "w": 7, "h": 7 },
     "rotated": false,
     "trimmed": true,
-    "spriteSourceSize": { "x": 14, "y": 14, "w": 13, "h": 3 },
+    "spriteSourceSize": { "x": 12, "y": 12, "w": 7, "h": 7 },
     "sourceSize": { "w": 31, "h": 31 },
     "duration": 100
    },
    "EverythingSprite 69.aseprite": {
+    "frame": { "x": 530, "y": 0, "w": 7, "h": 7 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 12, "y": 12, "w": 7, "h": 7 },
+    "sourceSize": { "w": 31, "h": 31 },
+    "duration": 100
+   },
+   "EverythingSprite 70.aseprite": {
+    "frame": { "x": 537, "y": 0, "w": 7, "h": 7 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 11, "y": 13, "w": 7, "h": 7 },
+    "sourceSize": { "w": 31, "h": 31 },
+    "duration": 100
+   },
+   "EverythingSprite 71.aseprite": {
+    "frame": { "x": 544, "y": 0, "w": 6, "h": 6 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 11, "y": 14, "w": 6, "h": 6 },
+    "sourceSize": { "w": 31, "h": 31 },
+    "duration": 100
+   },
+   "EverythingSprite 72.aseprite": {
+    "frame": { "x": 550, "y": 0, "w": 8, "h": 8 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 11, "y": 12, "w": 8, "h": 8 },
+    "sourceSize": { "w": 31, "h": 31 },
+    "duration": 100
+   },
+   "EverythingSprite 73.aseprite": {
+    "frame": { "x": 558, "y": 0, "w": 8, "h": 8 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 11, "y": 12, "w": 8, "h": 8 },
+    "sourceSize": { "w": 31, "h": 31 },
+    "duration": 100
+   },
+   "EverythingSprite 74.aseprite": {
+    "frame": { "x": 566, "y": 0, "w": 7, "h": 7 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 12, "y": 12, "w": 7, "h": 7 },
+    "sourceSize": { "w": 31, "h": 31 },
+    "duration": 100
+   },
+   "EverythingSprite 75.aseprite": {
+    "frame": { "x": 573, "y": 0, "w": 7, "h": 7 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 12, "y": 12, "w": 7, "h": 7 },
+    "sourceSize": { "w": 31, "h": 31 },
+    "duration": 100
+   },
+   "EverythingSprite 76.aseprite": {
+    "frame": { "x": 580, "y": 0, "w": 8, "h": 5 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 10, "y": 13, "w": 8, "h": 5 },
+    "sourceSize": { "w": 31, "h": 31 },
+    "duration": 100
+   },
+   "EverythingSprite 77.aseprite": {
     "frame": { "x": 0, "y": 0, "w": 0, "h": 0 },
     "rotated": false,
     "trimmed": true,
@@ -565,7 +629,7 @@
   "version": "1.2.15-x64",
   "image": "EverythingRawSprite.png",
   "format": "I8",
-  "size": { "w": 2170, "h": 31 },
+  "size": { "w": 2418, "h": 31 },
   "scale": "1",
   "frameTags": [
    { "name": "playBrawlerAIdle", "from": 0, "to": 0, "direction": "forward" },
@@ -586,7 +650,8 @@
    { "name": "playFallingShieldBack", "from": 55, "to": 58, "direction": "forward" },
    { "name": "playFallingShieldFront", "from": 59, "to": 62, "direction": "forward" },
    { "name": "playPike", "from": 63, "to": 67, "direction": "forward" },
-   { "name": "playFallenPike", "from": 68, "to": 68, "direction": "forward" }
+   { "name": "playLoadFireBow", "from": 68, "to": 75, "direction": "forward" },
+   { "name": "playBowFaded", "from": 76, "to": 76, "direction": "forward" }
   ],
   "layers": [
    { "name": "Main", "opacity": 255, "blendMode": "normal" },
