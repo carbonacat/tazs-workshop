@@ -23,37 +23,41 @@ INFOS
 
 FILE STRUCTURE
 
-- @              0: zstring - `TAZS-CHALPACK-1[NULL]` - Constant.
-- @             16: uint16 - TITLE_ADDR - The address to the first character of the Pack's Title.
-- @             18: uint16 - DESCR_ADDR - The address to the first character of the Pack's Description.
-- @             20: uint16 - CHALS_ADDR - The address to the Challenges part of the Pack.
-- @             22: uint16 - EXTRA_ADDR - The address to the extra part of the Pack.
-- @     TITLE_ADDR: zstring - The Pack's Title.
-- @     DESCR_ADDR: zstring - The Pack's Title.
-- @     CHALS_ADDR: uint8 - CHALLENGES_COUNT - Number of Challenges inside this pack.
-- @   CHALS_ADDR+1: <CHALLENGE> * CHALLENGES_COUNT
-- @     EXTRA_ADDR: [End]
+- @                           0: zstring - `TAZS-CHALPACK-1[NULL]` - Constant.
+- @                          16: uint16 - TITLE_ADDR - The address to the first character of the Pack's Title.
+- @                          18: uint16 - DESCR_ADDR - The address to the first character of the Pack's Description.
+- @                          20: uint16 - CHALS_ADDR - The address to the Challenges part of the Pack.
+- @                          22: uint16 - EXTRA_ADDR - The address to the extra part of the Pack.
+- @                  TITLE_ADDR: zstring - The Pack's Title.
+- @                      DESCR_ADDR: zstring - The Pack's Title.
+- @                  CHALS_ADDR: uint8 - CHALLS_COUNT - Number of Challenges inside this pack.
+- @                CHALS_ADDR+1: uint16 * CHALLS_COUNT - Address table for the Challenge.
+  - CHALS_ADDR+1 is the 1st Challenge's address.
+  - CHALS_ADDR+3 is the 2nd Challenge's address.
+  - ... and so on.
+- @ CHALS_ADDR+1+CHALLS_COUNT*2: <CHALLENGE> * CHALLENGES_COUNT - The Challenges themselves.
+- @                  EXTRA_ADDR: [End]
 
 
 <CHALLENGE> STRUCTURE
 
-- @              0: uint8 - ID of this Challenge inside the Pack.
-- @             +1: uint16 - TITLE_OFF - The offset to the Title of this Challenge.
-- @             +3: uint16 - DESCR_OFF - The offset to the Description of this Challenge.
-- @             +5: uint16 - UNITS_OFF - The offset to the Units of this Challenge (more precisely, the number of them).
-- @             +7: <UNIT_FLAGS> - Which units are allowed to be used in this Challenge.
-- @            +9: uint16 - Maximum cost allowed for that challenge.
+- @                           0: uint8 - ID of this Challenge inside the Pack.
+- @                          +1: uint16 - TITLE_OFF - The offset to the Title of this Challenge.
+- @                          +3: uint16 - DESCR_OFF - The offset to the Description of this Challenge.
+- @                          +5: uint16 - UNITS_OFF - The offset to the Units of this Challenge (more precisely, the number of them).
+- @                          +7: <UNIT_FLAGS> - Which units are allowed to be used in this Challenge.
+- @                          +9: uint16 - Maximum cost allowed for that challenge.
 
-- @     +TITLE_OFF: zstring - Title of that Challenge.
-- @     +DESCR_OFF: zstring - Description of that Challenge.
-- @     +UNITS_OFF: uint8 - UNITS_COUNT - Number of Units inside this Challenge.
-- @   +UNITS_OFF+1: <UNIT> * UNITS_COUNT 
+- @                  +TITLE_OFF: zstring - Title of that Challenge.
+- @                  +DESCR_OFF: zstring - Description of that Challenge.
+- @                  +UNITS_OFF: uint8 - UNITS_COUNT - Number of Units inside this Challenge.
+- @                +UNITS_OFF+1: <UNIT> * UNITS_COUNT 
 
 
 <UNIT> STRUCTURE
-- @             +0: <UNIT_INFO> - Infos about the Unit.
-- @             +1: int8 - UNIT_X - The Unit's X coordinates.
-- @             +2: int8 - UNIT_Y - The Unit's Y coordinates.
+- @                          +0: <UNIT_INFO> - Infos about the Unit.
+- @                          +1: int8 - UNIT_X - The Unit's X coordinates.
+- @                          +2: int8 - UNIT_Y - The Unit's Y coordinates.
 
 
 <UNIT_INFO> STRUCTURE
