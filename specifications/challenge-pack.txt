@@ -41,7 +41,7 @@ FILE STRUCTURE
 - @             +3: uint16 - DESCR_OFF - The offset to the Description of this Challenge.
 - @             +5: uint16 - UNITS_OFF - The offset to the Units of this Challenge (more precisely, the number of them).
 - @             +7: <UNIT_FLAGS> - Which units are allowed to be used in this Challenge.
-- @            +10: uint16 - Maximum cost allowed for that challenge.
+- @            +9: uint16 - Maximum cost allowed for that challenge.
 
 - @     +TITLE_OFF: zstring - Title of that Challenge.
 - @     +DESCR_OFF: zstring - Description of that Challenge.
