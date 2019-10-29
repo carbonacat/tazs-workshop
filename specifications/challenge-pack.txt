@@ -8,9 +8,10 @@ INFOS
 - Null characters are represented by [NULL].
 - Constants strings are represented with "". If null-terminated, they must show the null character.
 - Addresses are using decimal numbers.
-  - @     10: means 0 from the beginning of the file.
-  - @    +10: means 10 bytes after the beginning of the block.
-  - @ADDRESS: means at ADDRESS bytes after the beginning of the file.
+  - @      10: means 0 from the beginning of the file.
+  - @     +10: means 10 bytes after the beginning of the block.
+  - @ ADDRESS: means at ADDRESS bytes after the beginning of the file.
+  - @ +OFFSET: means at OFFSET bytes after the beginning of the current block.
 - Types:
   - zstring - Null-terminated string.
   - uint16 - Unsigned integer of 2 bytes.
