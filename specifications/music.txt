@@ -43,7 +43,7 @@ FILE STRUCTURE
 - @                           0: uint16 - ATTACK_DURATION - How much time the Attack phase will last, in 8000th of second.
 - @                           2: uint16 - DECAY_DURATION - How much time the Decay phase will last, in 8000th of second.
 - @                           4: uint16 - RELEASE_DURATION - How much time the Release phase will last, in 8000th of second.
-- @                           6: uint8 - SUSTAIN_MAX_RATIO - The amplitude of the Max/Sustain, in 256th.
+- @                           6: uint16 - SUSTAIN_MAX_RATIO - The amplitude of the Max/Sustain, in 256th.
 
 
 <EVENT> STRUCTURE
@@ -55,7 +55,7 @@ FILE STRUCTURE
 
 Values:
 - -128 - Go to location
-  - DURATION and LOUDNESS will be added together to know where to jump.
+  - DURATION and LOUDNESS will be read as a uint16 to know where to jump.
 - From -36 to +36 - Note.
   - The value is interpreted as the Note's Pitch.
   - 0 is DO at 523.25 Hz.
