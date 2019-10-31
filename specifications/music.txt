@@ -1,0 +1,61 @@
+DESCRIPTION
+
+This file describe the binary structure of a Music in TAZS.
+A Music are represented by a single instrument, and a sequence of Events, most of which are Notes.
+
+
+INFOS
+
+- Null characters are represented by [NULL].
+- Constants strings are represented with "". If null-terminated, they must show the null character.
+- Addresses are using decimal numbers.
+  - @      10: means 0 from the beginning of the file.
+  - @     +10: means 10 bytes after the beginning of the block.
+  - @ ADDRESS: means at ADDRESS bytes after the beginning of the file.
+  - @ +OFFSET: means at OFFSET bytes after the beginning of the current block.
+- Types:
+  - zstring - Null-terminated string.
+  - uint16 - Unsigned integer of 2 bytes.
+  - int8 - Signed integer of 1 byte.
+  - uint8 - Unsigned integer of 1 byte.
+  - <BLOCK> - Block described by the <BLOCK> STRUCTURE section.
+  - [End] - End of the block or the file.
+- Durations for the instrument are expressed in 8000th of second.
+- Durations for the events are expressed in 16th of second.
+
+
+FILE STRUCTURE
+
+- @                           0: zstring - `TAZS-MUSICALO-1[NULL]` - Constant.
+- @                          16: uint16 - TITLE_ADDR - The address to the first character of the Music's Title.
+- @                          18: uint16 - INSTR_ADD - The address to the Instrument part of the Music.
+- @                          20: uint16 - EVENTS_ADDR - The address to the Events part of the Pack.
+- @                          22: uint16 - EXTRA_ADDR - The address to the Extra part of the Pack.
+- @                  TITLE_ADDR: zstring - The Pack's Title.
+- @                   INSTR_ADD: <INSTRUMENT>
+- @                 EVENTS_ADDR: uint16 - EVENTS_COUNT - Number of Events inside this pack.
+- @               EVENTS_ADDR+2: <EVENT> * EVENTS_COUNT - The Events.
+- @                  EXTRA_ADDR: [End]
+
+
+<INSTRUMENT> STRUCTURE
+
+- @                           0: uint16 - ATTACK_DURATION - How much time the Attack phase will last, in 8000th of second.
+- @                           2: uint16 - DECAY_DURATION - How much time the Decay phase will last, in 8000th of second.
+- @                           4: uint16 - RELEASE_DURATION - How much time the Release phase will last, in 8000th of second.
+
+
+<EVENT> STRUCTURE
+- @                          +0: <COMMAND>
+- @                          +1: DURATION - How long this event will last, in 16th of second.
+- @                          +2: LOUDNESS - How loud this event is. 64 is the maximum, and very loud.
+
+<COMMAND> STRUCTURE
+
+Values:
+- -128 - Go to location
+  - DURATION and LOUDNESS will be added together to know where to jump.
+- From -36 to +36 - Note.
+  - The value is interpreted as the Note's Pitch.
+  - 0 is DO at 523.25 Hz.
+  - Multiples of 12, including 0, is a DO/C.
